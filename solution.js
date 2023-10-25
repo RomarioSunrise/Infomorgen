@@ -1,3 +1,5 @@
+
+
 import express from "express";
 import axios from "axios";
 
@@ -10,9 +12,11 @@ app.get("/", async (req, res) => {
   try {
     const result = await axios.get("https://secrets-api.appbrewery.com/random");
     res.render("index.ejs", {
-      secret: result.data.secret,
+      secret: result.data.timestamp,
       user: result.data.username,
+      emscore: result.data.emScore,
     });
+    console.log(result.data);
   } catch (error) {
     console.log(error.response.data);
     res.status(500);

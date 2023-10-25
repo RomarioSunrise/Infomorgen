@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body class="xl:mt-10 md:mt-16 mt-5">
+
+    <table class="table table-inverse">
+        <thead>
+          <tr>
+            <th>Typ</th>
+            <th>Technik</th>
+            <th>Antragsteller</th>
+            <th>Partnernetz</th>
+            <th>Kundennummer</th>
+            <th>Vorname</th>
+            <th>Nachname</th>
+            <th>Anliegen</th>
+          </tr>
+        </thead>
+      
+        <tbody>
+            <% contacts.forEach(function (contact) { %>
+          <tr>
+            <td><%= contact.Typ %></td>
+            <td><%= contact.Technik %></td>
+            <td><%= contact.Antragsteller %></td>
+            <td><%= contact.Partnernetz %></td>
+            <td><%= contact.Kundennummer %></td>
+            <td><%= contact.Vorname %></td>
+            <td><%= contact.Nachname %></td>
+            <td><%= contact.Anliegen %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+  </body>
+
+</html>
